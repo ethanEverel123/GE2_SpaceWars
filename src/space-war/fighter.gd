@@ -12,23 +12,14 @@ extends CharacterBody3D
 var camera : Camera3D
 
 var target: Node3D = null
-var fire_timer := 0.0
+var fire_timer := 1.0
 
 enum State { PATROL, PURSUE, ATTACK, EVADE }
 var state := State.PATROL
 
 func _ready():
-	var mat = StandardMaterial3D.new()
-	$MeshInstance3D.set_surface_override_material(0, mat)
-	print($MeshInstance3D.get_surface_override_material(0))  # should NOT be null now
+	
 	camera = get_tree().get_first_node_in_group("camera")
-
-func set_color(color: Color):
-	var mat = $MeshInstance3D.get_surface_override_material(0)
-	if mat == null:
-		mat = StandardMaterial3D.new()
-		$MeshInstance3D.set_surface_override_material(0, mat)
-	mat.albedo_color = color
 
 func _physics_process(delta):
 	fire_timer -= delta
@@ -57,7 +48,7 @@ func _update_target():
 func _update_state():
 	if target == null:
 		state = State.PATROL
-	elif health < 30:
+	elif health < 30: #work on this
 		state = State.EVADE
 	elif global_position.distance_to(target.global_position) < 30:
 		state = State.ATTACK
@@ -117,3 +108,10 @@ func _enforce_boundary(delta):
 		
 		move_and_slide()
 		return
+
+func set_color(color: Color):
+	var mat = $MeshInstance3D.get_surface_override_material(0)
+	if mat == null:
+		mat = StandardMaterial3D.new()
+		$MeshInstance3D.set_surface_override_material(0, mat)
+	mat.albedo_color = color
