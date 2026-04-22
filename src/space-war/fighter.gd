@@ -13,6 +13,18 @@ var fire_timer := 0.0
 enum State { PATROL, PURSUE, ATTACK, EVADE }
 var state := State.PATROL
 
+func _ready():
+	var mat = StandardMaterial3D.new()
+	$MeshInstance3D.set_surface_override_material(0, mat)
+	print($MeshInstance3D.get_surface_override_material(0))  # should NOT be null now
+
+func set_color(color: Color):
+	var mat = $MeshInstance3D.get_surface_override_material(0)
+	if mat == null:
+		mat = StandardMaterial3D.new()
+		$MeshInstance3D.set_surface_override_material(0, mat)
+	mat.albedo_color = color
+
 func _physics_process(delta):
 	fire_timer -= delta
 	_update_target()
@@ -82,6 +94,4 @@ func _try_shoot():
 		bullet.owner_team = team
 
 func take_damage(amount: float):
-	health -= amount
-	if health <= 0:
-		queue_free()
+	queue_free()

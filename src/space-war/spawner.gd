@@ -8,17 +8,19 @@ extends Node3D
 @export var TeamA : Node3D
 @export var TeamB : Node3D
 
+@export var team_a_color := Color.BLUE
+@export var team_b_color := Color.RED
+
 
 func _ready():
-	_spawn_team("A", TeamA, Vector3(-20, 0, 0))
-	_spawn_team("B", TeamB, Vector3(20, 0, 0))
+	_spawn_team("A", TeamA, Vector3(-20, 0, 0), team_a_color)
+	_spawn_team("B", TeamB, Vector3(20, 0, 0), team_b_color)
 
-func _spawn_team(team_name: String, container: Node3D, origin: Vector3):
+func _spawn_team(team_name: String, container: Node3D, origin: Vector3, color: Color):
 	for i in fighters_per_team:
 		var fighter = fighter_scene.instantiate()
-		if container == TeamA:
-			fighter.MeshInstance3D.mesh.material.albedo_color = 000000
 		container.add_child(fighter)
+		fighter.set_color(color) 
 		fighter.team = team_name
 		fighter.add_to_group("fighter")
 		fighter.global_position = origin + Vector3(
