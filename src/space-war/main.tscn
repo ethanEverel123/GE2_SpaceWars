@@ -25,7 +25,7 @@ material = SubResource("StandardMaterial3D_h2yge")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1191654300]
 transform = Transform3D(0.99994165, 0.010191296, -0.0036069974, -0.0028381832, 0.5694194, 0.82204235, 0.010431571, -0.82198405, 0.5694151, 0, 3.3439887, 4.395068)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1138684341]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1138684341 groups=["camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.88501203, 0.46556818, 0, -0.46556818, 0.88501203, 0, 1.601702, 3.2674093)
 script = ExtResource("2_lquwl")
 

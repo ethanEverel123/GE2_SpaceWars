@@ -6,6 +6,10 @@ extends CharacterBody3D
 @export var health := 100.0
 @export var fire_rate := 0.3
 @export var bullet_scene : PackedScene
+@export var max_distance_from_camera := 50.0
+
+
+var camera : Camera3D
 
 var target: Node3D = null
 var fire_timer := 0.0
@@ -17,6 +21,7 @@ func _ready():
 	var mat = StandardMaterial3D.new()
 	$MeshInstance3D.set_surface_override_material(0, mat)
 	print($MeshInstance3D.get_surface_override_material(0))  # should NOT be null now
+	camera = get_tree().get_first_node_in_group("camera")
 
 func set_color(color: Color):
 	var mat = $MeshInstance3D.get_surface_override_material(0)
@@ -27,6 +32,7 @@ func set_color(color: Color):
 
 func _physics_process(delta):
 	fire_timer -= delta
+	_enforce_boundary(delta)
 	_update_target()
 	_update_state()
 
@@ -59,7 +65,7 @@ func _update_state():
 		state = State.PURSUE
 
 func _patrol(delta):
-	# Fly forward, slowly turn
+	# fly forward
 	velocity = -transform.basis.z * speed
 
 func _pursue(delta):
@@ -95,3 +101,19 @@ func _try_shoot():
 
 func take_damage(amount: float):
 	queue_free()
+
+func _enforce_boundary(delta):
+	if camera == null:
+		return
+	
+	var dist = global_position.distance_to(camera.global_position)
+	if dist > max_distance_from_camera:
+		var direction = (camera.global_position - global_position).normalized()
+		velocity = direction * speed * 2.0  
+		
+		#rotate
+		var target_transform = transform.looking_at(camera.global_position, Vector3.UP)
+		transform = transform.interpolate_with(target_transform, turn_speed * delta * 3.0)
+		
+		move_and_slide()
+		return
