@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://5b2idvi4e7qx" path="res://fighter.gd" id="1_8y5bc"]
 [ext_resource type="PackedScene" uid="uid://cjqp14g2an2kc" path="res://bullet.tscn" id="2_buwds"]
 [ext_resource type="PackedScene" uid="uid://c4rfd0ausbuwj" path="res://3dexplosion.tscn" id="3_8ppnt"]
-[ext_resource type="PackedScene" uid="uid://4t74c0o3362p" path="res://assets/Untitled.glb" id="4_8y5bc"]
+[ext_resource type="PackedScene" uid="uid://4t74c0o3362p" path="res://assets/stars.glb" id="4_8y5bc"]
 [ext_resource type="PackedScene" uid="uid://kkgudodwqo4w" path="res://laser.tscn" id="4_buwds"]
 [ext_resource type="PackedScene" uid="uid://4g30q5oce5a" path="res://debris.tscn" id="5_8ppnt"]
 

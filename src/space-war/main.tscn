@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://bpxoulcexgcav" path="res://camera_3d.gd" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dyoxbmvv8tvt5" path="res://fighter.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dmp1yexe0frfp" path="res://Blue_fighter.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dwappgl8axw1v" path="res://assets/extracted_minecraft_java_editions_stars.glb" id="5_lquwl"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7dm0k"]
 
@@ -59,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1171465, 4.7181883)
 
 [node name="TeamB" type="Node3D" parent="." unique_id=868963089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6183369, -5.0217085)
+
+[node name="Sketchfab_Scene" parent="." unique_id=1212866931 instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.629807, 2.6429937, 0.8816155)
