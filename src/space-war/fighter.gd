@@ -8,12 +8,17 @@ extends CharacterBody3D
 @export var bullet_scene : PackedScene
 @export var max_distance_from_camera := 50.0
 @export var death_explosion : PackedScene
+@export var avoid_distance := 5
 
 
 var camera : Camera3D
-
 var target: Node3D = null
 var fire_timer := 1.0
+var color : Color
+var friends_to_avoid := [] #for avoiding friends
+
+
+
 
 enum State { PATROL, PURSUE, ATTACK, EVADE }
 var state := State.PATROL
@@ -21,6 +26,8 @@ var state := State.PATROL
 func _ready():
 	
 	camera = get_tree().get_first_node_in_group("camera")
+	$friendsphere.connect("body_entered", _on_friend_entered)
+	$friendsphere.connect("body_exited", _on_friend_exited)
 
 func _physics_process(delta):
 	fire_timer -= delta
@@ -62,14 +69,23 @@ func _patrol(delta):
 
 func _pursue(delta):
 	if not target: return
-	var dir = (target.global_position - global_position).normalized()
-	_steer_toward(dir, delta)
+	
+	var chase_dir = (target.global_position - global_position).normalized()
+	var avoidance = _get_avoidance_force()
+	var final_dir = (chase_dir + avoidance).normalized()
+	
+	
+	_steer_toward(final_dir, delta)
 	velocity = -transform.basis.z * speed
 
 func _attack(delta):
 	if not target: return
-	var dir = (target.global_position - global_position).normalized()
-	_steer_toward(dir, delta)
+	
+	var chase_dir = (target.global_position - global_position).normalized()
+	var avoidance = _get_avoidance_force()
+	var final_dir = (chase_dir + avoidance).normalized()
+	
+	_steer_toward(final_dir, delta)
 	velocity = -transform.basis.z * speed
 	_try_shoot()
 
@@ -88,6 +104,7 @@ func _try_shoot():
 		fire_timer = fire_rate
 		var bullet = bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)
+		bullet.set_color(color)
 		bullet.global_transform = $GunPoint.global_transform
 		bullet.owner_team = team
 
@@ -97,11 +114,7 @@ func take_damage(amount: float):
 	explosion.global_position = global_position
 	explosion.emitting = true
 	
-	
-	
 	queue_free()
-
-
 
 func _enforce_boundary(delta):
 	if camera == null:
@@ -120,8 +133,27 @@ func _enforce_boundary(delta):
 		return
 
 func set_color(color: Color):
+	color = color
 	var mat = $MeshInstance3D.get_surface_override_material(0)
 	if mat == null:
 		mat = StandardMaterial3D.new()
 		$MeshInstance3D.set_surface_override_material(0, mat)
 	mat.albedo_color = color
+
+func _on_friend_entered(body):
+	if body.is_in_group("fighters") and body.team == team and body != self:
+		friends_to_avoid.append(body)
+	
+func _on_friend_exited(body):
+	friends_to_avoid.erase(body)
+
+func _get_avoidance_force() -> Vector3:
+	var force = Vector3.ZERO
+	for friend in friends_to_avoid:
+		if not is_instance_valid(friend):
+			continue
+		var diff = global_position - friend.global_position
+		var dist = diff.length()
+		if dist > 0:
+			force += diff.normlized() * (avoid_distance / dist)
+	return force
