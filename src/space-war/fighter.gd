@@ -48,7 +48,7 @@ func _update_target():
 func _update_state():
 	if target == null:
 		state = State.PATROL
-	elif health < 30: #work on this
+	elif health < 30: #update to if being fired at
 		state = State.EVADE
 	elif global_position.distance_to(target.global_position) < 30:
 		state = State.ATTACK
@@ -79,7 +79,7 @@ func _evade(delta):
 	velocity = -transform.basis.z * speed * 1.5  # flee faster
 
 func _steer_toward(direction: Vector3, delta: float):
-	var target_transform = transform.looking_at(global_position + direction, Vector3.UP)
+	var target_transform = transform.looking_at(global_position + direction, transform.basis.y)
 	transform = transform.interpolate_with(target_transform, turn_speed * delta)
 
 func _try_shoot():

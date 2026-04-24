@@ -2,7 +2,7 @@
 extends Node3D
 
 @export var fighter_scene : PackedScene
-@export var fighters_per_team := 3
+@export var fighters_per_team := 8
 @export var spawn_radius := 30.0
 
 @export var TeamA : Node3D

@@ -14,7 +14,7 @@ size = Vector3(2, 1, 1)
 size = Vector3(2, 1, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_umvcx"]
-radius = 10.0
+radius = 30.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=249526525 groups=["fighter"]]
 motion_mode = 1
