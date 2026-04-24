@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bam4iqwuy80b1" path="res://spawner.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bpxoulcexgcav" path="res://camera_3d.gd" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dyoxbmvv8tvt5" path="res://fighter.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dmp1yexe0frfp" path="res://Blue_fighter.tscn" id="4_1bvp3"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 
@@ -44,7 +45,8 @@ surface_material_override/0 = SubResource("ORMMaterial3D_0xm2m")
 [node name="spawner" type="Node3D" parent="." unique_id=239610749 node_paths=PackedStringArray("TeamA", "TeamB")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.097942114, 0, -0.5520557)
 script = ExtResource("2_0xm2m")
-fighter_scene = ExtResource("3_h2yge")
+fighter_sceneR = ExtResource("3_h2yge")
+fighter_sceneB = ExtResource("4_1bvp3")
 TeamA = NodePath("../TeamA")
 TeamB = NodePath("../TeamB")
 

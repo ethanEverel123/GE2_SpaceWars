@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var team := "A"
-@export var speed := 20.0
+@export var speed := 30.0
 @export var turn_speed := 2.0
 @export var health := 100.0
 @export var fire_rate := 0.3
@@ -71,7 +71,7 @@ func _pursue(delta):
 	if not target: return
 	
 	var chase_dir = (target.global_position - global_position).normalized()
-	var avoidance = _get_avoidance_force()
+	var avoidance = _get_avoidance_force() #steering behaviour
 	var final_dir = (chase_dir + avoidance).normalized()
 	
 	
@@ -132,13 +132,6 @@ func _enforce_boundary(delta):
 		move_and_slide()
 		return
 
-func set_color(color: Color):
-	color = color
-	var mat = $MeshInstance3D.get_surface_override_material(0)
-	if mat == null:
-		mat = StandardMaterial3D.new()
-		$MeshInstance3D.set_surface_override_material(0, mat)
-	mat.albedo_color = color
 
 func _on_friend_entered(body):
 	if body.is_in_group("fighters") and body.team == team and body != self:

@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://dyoxbmvv8tvt5"]
+[gd_scene format=3 uid="uid://dmp1yexe0frfp"]
 
-[ext_resource type="Script" uid="uid://5b2idvi4e7qx" path="res://fighter.gd" id="1_efvb3"]
-[ext_resource type="PackedScene" uid="uid://cjqp14g2an2kc" path="res://bullet.tscn" id="2_umvcx"]
-[ext_resource type="PackedScene" uid="uid://c4rfd0ausbuwj" path="res://3dexplosion.tscn" id="3_qq641"]
-[ext_resource type="PackedScene" uid="uid://dn23l57jfbn2h" path="res://assets/RedXship.glb" id="4_l3gly"]
+[ext_resource type="Script" uid="uid://5b2idvi4e7qx" path="res://fighter.gd" id="1_8y5bc"]
+[ext_resource type="PackedScene" uid="uid://cjqp14g2an2kc" path="res://bullet.tscn" id="2_buwds"]
+[ext_resource type="PackedScene" uid="uid://c4rfd0ausbuwj" path="res://3dexplosion.tscn" id="3_8ppnt"]
+[ext_resource type="PackedScene" uid="uid://4t74c0o3362p" path="res://assets/Untitled.glb" id="4_8y5bc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efvb3"]
 size = Vector3(2, 1, 2.038)
@@ -16,9 +16,9 @@ radius = 5.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=249526525 groups=["fighter"]]
 motion_mode = 1
-script = ExtResource("1_efvb3")
-bullet_scene = ExtResource("2_umvcx")
-death_explosion = ExtResource("3_qq641")
+script = ExtResource("1_8y5bc")
+bullet_scene = ExtResource("2_buwds")
+death_explosion = ExtResource("3_8ppnt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=401713514]
 shape = SubResource("BoxShape3D_efvb3")
@@ -39,5 +39,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.67500174)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="friendsphere" unique_id=1026716476]
 shape = SubResource("SphereShape3D_qq641")
 
-[node name="RedXship" parent="." unique_id=793195608 instance=ExtResource("4_l3gly")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.001, 0, 0)
+[node name="BlueShip" parent="." unique_id=949788295 instance=ExtResource("4_8y5bc")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.038, 0, 0)
