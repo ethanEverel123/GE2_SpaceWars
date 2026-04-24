@@ -47,6 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.097942114, 0, -0.5520557)
 script = ExtResource("2_0xm2m")
 fighter_sceneR = ExtResource("3_h2yge")
 fighter_sceneB = ExtResource("4_1bvp3")
+fighters_per_team = 16
 TeamA = NodePath("../TeamA")
 TeamB = NodePath("../TeamB")
 

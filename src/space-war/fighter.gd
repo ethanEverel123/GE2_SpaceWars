@@ -10,13 +10,14 @@ extends CharacterBody3D
 @export var death_explosion : PackedScene
 @export var avoid_distance := 5
 @export var shoot_noise : PackedScene
+@export var debris : PackedScene
 
 
 var camera : Camera3D
 var target: Node3D = null
 var fire_timer := 1.0
 var color : Color
-var friends_to_avoid := [] #for avoiding friends
+var avoid := [] #for avoiding friends
 
 
 
@@ -123,6 +124,10 @@ func take_damage(amount: float):
 	explosion.global_position = global_position
 	explosion.emitting = true
 	
+	var debris = debris.instantiate()
+	get_tree().root.add_child(debris)
+	debris.global_position = global_position
+	
 	queue_free()
 
 func _enforce_boundary(delta):
@@ -143,18 +148,20 @@ func _enforce_boundary(delta):
 
 func _on_friend_entered(body):
 	if body.is_in_group("fighters") and body.team == team and body != self:
-		friends_to_avoid.append(body)
+		avoid.append(body)
+	elif body.is_in_group("debris"):
+		avoid.append(body)
 	
 func _on_friend_exited(body):
-	friends_to_avoid.erase(body)
+	avoid.erase(body)
 
 func _get_avoidance_force() -> Vector3:
 	var force = Vector3.ZERO
-	for friend in friends_to_avoid:
+	for friend in avoid:
 		if not is_instance_valid(friend):
 			continue
 		var diff = global_position - friend.global_position
 		var dist = diff.length()
 		if dist > 0:
-			force += diff.normlized() * (avoid_distance / dist)
+			force += diff.normalized() * (avoid_distance / dist) * 2
 	return force

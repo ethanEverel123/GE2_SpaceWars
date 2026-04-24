@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://4g30q5oce5a"]
+
+[ext_resource type="Script" uid="uid://bc1rauwje7252" path="res://debris.gd" id="1_e8eya"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_q5k8r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5k8r"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_e8eya"]
+material = SubResource("StandardMaterial3D_q5k8r")
+
+[node name="debris" type="RigidBody3D" unique_id=2113108142 groups=["debris"]]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_e8eya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=369446414]
+shape = SubResource("SphereShape3D_q5k8r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1328566584]
+mesh = SubResource("SphereMesh_e8eya")
