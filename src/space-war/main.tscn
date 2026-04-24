@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dyoxbmvv8tvt5" path="res://fighter.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dmp1yexe0frfp" path="res://Blue_fighter.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dwappgl8axw1v" path="res://assets/extracted_minecraft_java_editions_stars.glb" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bk56332vh3xlp" path="res://assets/orange_planet.glb" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://1j4ke2kc3s8q" path="res://assets/purple_planet.glb" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://73fjpqipuuch" path="res://assets/green_planet.glb" id="8_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bn7wpvni8ual6" path="res://assets/moon.glb" id="9_efxa6"]
+[ext_resource type="PackedScene" uid="uid://ch3lrniklgism" path="res://assets/sun.glb" id="10_dg77c"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 2
@@ -64,3 +69,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6183369, -5.0217085)
 
 [node name="Sketchfab_Scene" parent="." unique_id=1212866931 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.629807, 2.6429937, 0.8816155)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=435111479 instance=ExtResource("6_7mycd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 26.112438, -4.5247173, -14.190063)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=1095568591 instance=ExtResource("7_272bh")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -81.29704, 1.0341429, -91.01602)
+
+[node name="Sketchfab_Scene4" parent="." unique_id=2060756479 instance=ExtResource("8_4c57u")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 140.32187, 21.956772, 69.94417)
+
+[node name="Sketchfab_Scene5" parent="." unique_id=636451329 instance=ExtResource("9_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.681572, 0, 35.571033)
+
+[node name="Sketchfab_Scene6" parent="." unique_id=893221472 instance=ExtResource("9_efxa6")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -35.625717, -34.662376, 12.088982)
+
+[node name="Sketchfab_Scene7" parent="." unique_id=450228771 instance=ExtResource("10_dg77c")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.8324509, 184.66638, -9.99239)
