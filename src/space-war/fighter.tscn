@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5b2idvi4e7qx" path="res://fighter.gd" id="1_efvb3"]
 [ext_resource type="PackedScene" uid="uid://cjqp14g2an2kc" path="res://bullet.tscn" id="2_umvcx"]
+[ext_resource type="PackedScene" uid="uid://c4rfd0ausbuwj" path="res://3dexplosion.tscn" id="3_qq641"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efvb3"]
 albedo_color = Color(0.69411767, 0.05490196, 0.05490196, 1)
@@ -20,6 +21,7 @@ radius = 30.0
 motion_mode = 1
 script = ExtResource("1_efvb3")
 bullet_scene = ExtResource("2_umvcx")
+death_explosion = ExtResource("3_qq641")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1383030928]
 mesh = SubResource("BoxMesh_6jilj")

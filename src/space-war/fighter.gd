@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var fire_rate := 0.3
 @export var bullet_scene : PackedScene
 @export var max_distance_from_camera := 50.0
+@export var death_explosion : PackedScene
 
 
 var camera : Camera3D
@@ -91,7 +92,16 @@ func _try_shoot():
 		bullet.owner_team = team
 
 func take_damage(amount: float):
+	var explosion = death_explosion.instantiate()
+	get_tree().root.add_child(explosion)
+	explosion.global_position = global_position
+	explosion.emitting = true
+	
+	
+	
 	queue_free()
+
+
 
 func _enforce_boundary(delta):
 	if camera == null:
