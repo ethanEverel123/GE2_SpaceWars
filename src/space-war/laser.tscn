@@ -1,11 +1,9 @@
-[gd_scene format=3 uid="uid://c4rfd0ausbuwj"]
+[gd_scene format=3 uid="uid://kkgudodwqo4w"]
 
-[ext_resource type="AudioStream" uid="uid://bk44264fya7pw" path="res://sound/gearpile-explosion-3-386885.mp3" id="1_oredg"]
+[ext_resource type="AudioStream" uid="uid://ch3gy3uehy4fo" path="res://sound/laser.mp3" id="1_fn5yt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rj46"]
-transparency = 1
-vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0.45882353, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn5yt"]
+albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="Curve" id="Curve_q7epf"]
 _data = [Vector2(0.00584795, 1), 0.0, 0.0, 0, 0, Vector2(0.00842105, 0), 0.0, 0.0, 0, 0, Vector2(0.248421, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -34,10 +32,12 @@ linear_accel_max = 5.0
 scale_curve = SubResource("CurveTexture_q7epf")
 alpha_curve = SubResource("CurveTexture_vxas0")
 
-[sub_resource type="BoxMesh" id="BoxMesh_7rj46"]
+[sub_resource type="SphereMesh" id="SphereMesh_6vqwg"]
+radius = 0.1
+height = 0.1
 
 [node name="explosion" type="GPUParticles3D" unique_id=1950291968]
-material_override = SubResource("StandardMaterial3D_7rj46")
+material_override = SubResource("StandardMaterial3D_fn5yt")
 emitting = false
 amount = 100
 lifetime = 2.0
@@ -45,9 +45,8 @@ one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_7rj46")
-draw_pass_1 = SubResource("BoxMesh_7rj46")
+draw_pass_1 = SubResource("SphereMesh_6vqwg")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=601299897]
-stream = ExtResource("1_oredg")
-max_db = 2.0
+stream = ExtResource("1_fn5yt")
 autoplay = true

@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var max_distance_from_camera := 50.0
 @export var death_explosion : PackedScene
 @export var avoid_distance := 5
+@export var shoot_noise : PackedScene
 
 
 var camera : Camera3D
@@ -102,8 +103,16 @@ func _steer_toward(direction: Vector3, delta: float):
 func _try_shoot():
 	if fire_timer <= 0.0:
 		fire_timer = fire_rate
+		
 		var bullet = bullet_scene.instantiate()
+		var shoot_noise = shoot_noise.instantiate()
+		
+		get_tree().root.add_child(shoot_noise)
 		get_tree().root.add_child(bullet)
+		
+		get_tree().root.add_child(shoot_noise)
+		shoot_noise.global_position = global_position
+		shoot_noise.emitting = true
 		bullet.set_color(color)
 		bullet.global_transform = $GunPoint.global_transform
 		bullet.owner_team = team
@@ -131,7 +140,6 @@ func _enforce_boundary(delta):
 		
 		move_and_slide()
 		return
-
 
 func _on_friend_entered(body):
 	if body.is_in_group("fighters") and body.team == team and body != self:

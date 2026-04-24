@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://5b2idvi4e7qx" path="res://fighter.gd" id="1_efvb3"]
 [ext_resource type="PackedScene" uid="uid://cjqp14g2an2kc" path="res://bullet.tscn" id="2_umvcx"]
 [ext_resource type="PackedScene" uid="uid://c4rfd0ausbuwj" path="res://3dexplosion.tscn" id="3_qq641"]
+[ext_resource type="PackedScene" uid="uid://kkgudodwqo4w" path="res://laser.tscn" id="4_3ypa3"]
 [ext_resource type="PackedScene" uid="uid://dn23l57jfbn2h" path="res://assets/RedXship.glb" id="4_l3gly"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efvb3"]
@@ -19,6 +20,7 @@ motion_mode = 1
 script = ExtResource("1_efvb3")
 bullet_scene = ExtResource("2_umvcx")
 death_explosion = ExtResource("3_qq641")
+shoot_noise = ExtResource("4_3ypa3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=401713514]
 shape = SubResource("BoxShape3D_efvb3")
@@ -32,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 shape = SubResource("SphereShape3D_umvcx")
 
 [node name="GunPoint" type="Node3D" parent="." unique_id=1854480919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.67500174)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 
 [node name="friendsphere" type="Area3D" parent="." unique_id=1646175385]
 
