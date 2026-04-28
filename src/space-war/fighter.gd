@@ -124,9 +124,9 @@ func take_damage(amount: float):
 	explosion.global_position = global_position
 	explosion.emitting = true
 	
-	var debris = debris.instantiate()
-	get_tree().root.add_child(debris)
-	debris.global_position = global_position
+	#var debris = debris.instantiate()
+	#get_tree().root.add_child(debris)
+	#debris.global_position = global_position
 	
 	queue_free()
 
@@ -163,5 +163,5 @@ func _get_avoidance_force() -> Vector3:
 		var diff = global_position - friend.global_position
 		var dist = diff.length()
 		if dist > 0:
-			force += diff.normalized() * (avoid_distance / dist) * 2
+			force += diff.normalized() * (avoid_distance / dist) * 3
 	return force

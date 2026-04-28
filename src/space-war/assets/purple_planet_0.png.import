@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cun3ijiuf7qwf"
-path.s3tc="res://.godot/imported/sun_0.jpg-713b80d3b1c31098c291a0cc2ea12137.s3tc.ctex"
+uid="uid://ctwmemfylwucj"
+path.s3tc="res://.godot/imported/purple_planet_0.png-9dc3ed640d5440828333c42f9c15a646.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a1a389757c83d3b77b2d3aaf14caeeac"
+"md5": "1ccd015bbd6306eb3ffc8223691e0c1c"
 }
 
 [deps]
 
-source_file="res://assets/sun_0.jpg"
-dest_files=["res://.godot/imported/sun_0.jpg-713b80d3b1c31098c291a0cc2ea12137.s3tc.ctex"]
+source_file="res://assets/purple_planet_0.png"
+dest_files=["res://.godot/imported/purple_planet_0.png-9dc3ed640d5440828333c42f9c15a646.s3tc.ctex"]
 
 [params]
 
