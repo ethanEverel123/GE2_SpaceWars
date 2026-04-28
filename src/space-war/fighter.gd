@@ -67,7 +67,7 @@ func _update_state():
 
 func _patrol(delta):
 	# fly forward
-	velocity = -transform.basis.z * speed
+	velocity = transform.basis.z * speed
 
 func _pursue(delta):
 	if not target: return

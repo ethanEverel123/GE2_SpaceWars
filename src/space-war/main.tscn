@@ -13,34 +13,17 @@
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7dm0k"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ig7tw"]
-size = Vector2(20, 20)
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_0xm2m"]
-albedo_color = Color(0, 0.30588236, 0.47843137, 1)
-
 [node name="main-scene" type="Node3D" unique_id=563793325]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1191654300]
 transform = Transform3D(0.99994165, 0.010191296, -0.0036069974, -0.0028381832, 0.5694194, 0.82204235, 0.010431571, -0.82198405, 0.5694151, 0, 3.3439887, 4.395068)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1138684341 groups=["camera"]]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9915056, 0)
 script = ExtResource("2_lquwl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079966934]
 environment = SubResource("Environment_h2yge")
-
-[node name="world" type="StaticBody3D" parent="." unique_id=1282702030]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="world" unique_id=1840812851]
-shape = SubResource("WorldBoundaryShape3D_7dm0k")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="world" unique_id=453248866]
-mesh = SubResource("PlaneMesh_ig7tw")
-surface_material_override/0 = SubResource("ORMMaterial3D_0xm2m")
 
 [node name="spawner" type="Node3D" parent="." unique_id=239610749 node_paths=PackedStringArray("TeamA", "TeamB")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.097942114, 0, -0.5520557)
