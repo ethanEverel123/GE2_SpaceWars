@@ -111,14 +111,15 @@ func _try_shoot():
 		get_tree().root.add_child(shoot_noise)
 		get_tree().root.add_child(bullet)
 		
-		get_tree().root.add_child(shoot_noise)
 		shoot_noise.global_position = global_position
 		shoot_noise.emitting = true
 		bullet.set_color(color)
 		bullet.global_transform = $GunPoint.global_transform
 		bullet.owner_team = team
 
-func take_damage(amount: float):
+func take_damage(amount: float, attacking_team : String):
+	ScoreManager.add_kill(attacking_team)
+
 	var explosion = death_explosion.instantiate()
 	get_tree().root.add_child(explosion)
 	explosion.global_position = global_position

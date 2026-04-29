@@ -10,13 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://c0dudynveygk8" path="res://assets/green_planet.glb" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://df2tyvajh6qkm" path="res://assets/moon.glb" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dip375algs1nj" path="res://assets/sun.glb" id="10_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dx87pgxmnrd67" path="res://BigBlue.tscn" id="11_dg77c"]
+[ext_resource type="PackedScene" uid="uid://cv6n6kf7glc2t" path="res://assets/ships/bigRed.glb" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://b185r6fff2npr" path="res://scoreboard.gd" id="13_ycdy4"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 
 [node name="main-scene" type="Node3D" unique_id=563793325]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1191654300]
-transform = Transform3D(0.99994165, 0.010191296, -0.0036069974, -0.0028381832, 0.5694194, 0.82204235, 0.010431571, -0.82198405, 0.5694151, 0, 3.3439887, 4.395068)
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 30, 0)
+light_bake_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1138684341 groups=["camera"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9915056, 0)
@@ -61,3 +65,33 @@ transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -35.625717, -34.662376, 12.08
 
 [node name="sun" parent="." unique_id=450228771 instance=ExtResource("10_dg77c")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.8324509, 184.66638, -9.99239)
+
+[node name="MeshInstance3D" parent="." unique_id=741496600 instance=ExtResource("11_dg77c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -60, 2.891, -25.825552)
+
+[node name="bigRed" parent="." unique_id=208645294 instance=ExtResource("12_ycdy4")]
+transform = Transform3D(-5, 0, -4.371139e-07, 0, 5, 0, 4.371139e-07, 0, -5, 50, -5.494506, 14.272572)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=323436755]
+follow_viewport_enabled = true
+
+[node name="scoreboard" type="Control" parent="CanvasLayer" unique_id=1253247778]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_bottom = 50.0
+grow_horizontal = 0
+script = ExtResource("13_ycdy4")
+
+[node name="RedTeamLabel" type="Label" parent="CanvasLayer/scoreboard" unique_id=1553419589]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BlueTeamLabel" type="Label" parent="CanvasLayer/scoreboard" unique_id=232363981]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 2

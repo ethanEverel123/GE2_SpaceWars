@@ -10,7 +10,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.has_method("take_damage") and body.team != owner_team:
-		body.take_damage(damage)
+		body.take_damage(damage, owner_team)
 		queue_free()
 
 func set_color(color: Color):
