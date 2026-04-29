@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://gm71ilvlsvun"]
+
+[ext_resource type="PackedScene" uid="uid://cv6n6kf7glc2t" path="res://assets/ships/bigRed.glb" id="1_rdwxr"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=1694433415]
+
+[node name="bigRed" parent="." unique_id=208645294 instance=ExtResource("1_rdwxr")]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dx87pgxmnrd67"]
+
+[ext_resource type="PackedScene" uid="uid://ciaahsxt36btw" path="res://assets/ships/bigBlue.glb" id="1_748qy"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=741496600]
+
+[node name="bigBlue" parent="." unique_id=352093266 instance=ExtResource("1_748qy")]

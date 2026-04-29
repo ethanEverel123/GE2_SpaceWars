@@ -49,5 +49,6 @@ draw_pass_1 = SubResource("BoxMesh_7rj46")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=601299897]
 stream = ExtResource("1_oredg")
-max_db = 4.0
 autoplay = true
+bus = &"Space"
+attenuation_filter_cutoff_hz = 2000.0
