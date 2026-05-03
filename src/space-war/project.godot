@@ -27,6 +27,10 @@ ScoreManager="*uid://w1mwtyc5ki6a"
 
 settings/addon_root_folder="res://addons/debug_draw_3d"
 
+[display]
+
+window/size/mode=3
+
 [global_group]
 
 fighter="group for fighter jets"
