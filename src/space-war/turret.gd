@@ -11,6 +11,7 @@ extends Node3D
 var yaw := 0.0
 var pitch := 0.0
 
+
 var fire_timer := 0.0
 
 func ready():
@@ -22,7 +23,7 @@ func _physics_process(delta):
 	rotation.x = pitch
 	rotation.y = yaw
 
-	if Input.is_action_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_action_pressed("shoot"):
 		_try_shoot()
 
 func _input(event):
@@ -41,5 +42,6 @@ func _try_shoot():
 		var bullet = bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)
 		bullet.global_transform = $GunPoint.global_transform
+		bullet.set_color(Color.GREEN)
 		bullet.set_speed(400)
 		bullet.owner_team = team
