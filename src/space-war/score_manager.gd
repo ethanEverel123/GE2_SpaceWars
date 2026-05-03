@@ -4,7 +4,8 @@ extends Node
 # score_manager.gd
 var scores := {
 	"A": 0,
-	"B": 0
+	"B": 0,
+	"turret": 0
 }
 
 
@@ -21,4 +22,5 @@ func add_kill(killing_team: String):
 func reset():
 	scores["A"] = 0
 	scores["B"] = 0
+	scores["turret"] = 0
 	emit_signal("score_updated")

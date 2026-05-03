@@ -96,4 +96,9 @@ offset_right = 20.0
 offset_bottom = 43.0
 horizontal_alignment = 2
 
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/scoreboard" unique_id=1450470727]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="turret" parent="." unique_id=483845586 groups=["camera"] instance=ExtResource("14_w48qg")]

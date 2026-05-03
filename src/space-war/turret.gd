@@ -5,7 +5,7 @@ extends Node3D
 @export var bullet_scene : PackedScene
 @export var rotation_speed := 3.0
 @export var health := 50.0
-@export var team := "player"
+@export var team := "turret"
 @export var mouse_sensitivity := 0.003
 @export var pitch_limit := 89.0
 var yaw := 0.0
@@ -35,12 +35,11 @@ func _input(event):
 		if event.keycode == KEY_ESCAPE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-
-
 func _try_shoot():
 	if fire_timer <= 0.0:
 		fire_timer = fire_rate
 		var bullet = bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)
 		bullet.global_transform = $GunPoint.global_transform
+		bullet.set_speed(400)
 		bullet.owner_team = team

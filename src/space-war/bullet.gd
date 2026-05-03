@@ -20,3 +20,6 @@ func set_color(color: Color):
 		mat = StandardMaterial3D.new()
 		$MeshInstance3D.set_surface_override_material(0, mat)
 	mat.albedo_color = color
+
+func set_speed(Newspeed: float):
+	speed = Newspeed
