@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dba1y1rtk4c4e"]
 
 [ext_resource type="Script" uid="uid://bam4iqwuy80b1" path="res://spawner.gd" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://bpxoulcexgcav" path="res://camera_3d.gd" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dyoxbmvv8tvt5" path="res://fighter.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dmp1yexe0frfp" path="res://Blue_fighter.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bdlbm8sguadsn" path="res://assets/extracted_minecraft_java_editions_stars.glb" id="5_lquwl"]
@@ -13,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dx87pgxmnrd67" path="res://BigBlue.tscn" id="11_dg77c"]
 [ext_resource type="PackedScene" uid="uid://cv6n6kf7glc2t" path="res://assets/ships/bigRed.glb" id="12_ycdy4"]
 [ext_resource type="Script" uid="uid://b185r6fff2npr" path="res://scoreboard.gd" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://jxgclf5biv36" path="res://turret.tscn" id="14_w48qg"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 
@@ -21,10 +21,6 @@
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1191654300]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 30, 0)
 light_bake_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1138684341 groups=["camera"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9915056, 0)
-script = ExtResource("2_lquwl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2079966934]
 environment = SubResource("Environment_h2yge")
@@ -99,3 +95,5 @@ offset_top = 20.0
 offset_right = 20.0
 offset_bottom = 43.0
 horizontal_alignment = 2
+
+[node name="turret" parent="." unique_id=483845586 groups=["camera"] instance=ExtResource("14_w48qg")]

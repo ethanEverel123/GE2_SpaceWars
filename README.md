@@ -10,14 +10,14 @@ SHIPS
  - chase an enemy ship DONE
  - fire at enemy ship DONE
  - on hit ship should explode DONE
- - more ships should respawn to replace the destroyed ship
- - ships should move realistically as if they are using thrusters in a 0 gravity environment
+ - more ships should respawn to replace the destroyed ship DONT NEED
+ - ships should move realistically as if they are using thrusters in a 0 gravity environment DONE
  - ships should make a noise to indicate they have exploded DONE
  - ships should be able to ask their allies for help if trailed - perhaps make a particle effect + sound to show this to user
- - if ship is trailed they should be able to dodge shots
+ - if ship is trailed they should be able to dodge shots DONE
  - ships should be distinguishable based on team DONE
 BACKGROUND
-- large carrier ships where new ships spawn
+- large carrier ships where new ships spawn DONE
 - skybox should be distant stars DONE
 - should be planets to simulate a solar system DONE
 

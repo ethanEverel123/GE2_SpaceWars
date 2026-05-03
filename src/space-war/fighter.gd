@@ -13,7 +13,7 @@ extends CharacterBody3D
 @export var debris : PackedScene
 
 
-var camera : Camera3D
+var turret : Node3D
 var target: Node3D = null
 var fire_timer := 1.0
 var color : Color
@@ -27,7 +27,7 @@ var state := State.PATROL
 
 func _ready():
 	
-	camera = get_tree().get_first_node_in_group("camera")
+	turret = get_tree().get_first_node_in_group("camera")
 	$friendsphere.connect("body_entered", _on_friend_entered)
 	$friendsphere.connect("body_exited", _on_friend_exited)
 
@@ -132,16 +132,16 @@ func take_damage(amount: float, attacking_team : String):
 	queue_free()
 
 func _enforce_boundary(delta):
-	if camera == null:
+	if turret == null:
 		return
 	
-	var dist = global_position.distance_to(camera.global_position)
+	var dist = global_position.distance_to(turret.global_position)
 	if dist > max_distance_from_camera:
-		var direction = (camera.global_position - global_position).normalized()
+		var direction = (turret.global_position - global_position).normalized()
 		velocity = direction * speed * 2.0  
 		
 		#rotate
-		var target_transform = transform.looking_at(camera.global_position, Vector3.UP)
+		var target_transform = transform.looking_at(turret.global_position, Vector3.UP)
 		transform = transform.interpolate_with(target_transform, turn_speed * delta * 3.0)
 		
 		move_and_slide()

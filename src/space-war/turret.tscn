@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://jxgclf5biv36"]
+
+[ext_resource type="Script" uid="uid://dct1u8h1ctdm1" path="res://turret.gd" id="1_3oylf"]
+[ext_resource type="PackedScene" uid="uid://cjqp14g2an2kc" path="res://bullet.tscn" id="2_tjdg3"]
+[ext_resource type="PackedScene" uid="uid://uvaedvkwj3qi" path="res://assets/gun/BFG.glb" id="3_c5apd"]
+
+[node name="Turret" type="Node3D" unique_id=483845586 groups=["turret"]]
+script = ExtResource("1_3oylf")
+bullet_scene = ExtResource("2_tjdg3")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1043460888]
+
+[node name="Sketchfab_Scene" parent="." unique_id=673016806 instance=ExtResource("3_c5apd")]
+transform = Transform3D(-2.1855695e-09, 4.694187e-17, 0.049999997, 0.0038524847, 0.04985137, 1.6839741e-10, -0.04985137, 0.0038524847, -2.1790727e-09, 0, -1.5535011, -0.54803705)
+
+[node name="GunPoint" type="Node3D" parent="." unique_id=229878444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
