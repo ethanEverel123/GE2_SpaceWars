@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://4g63mjl2lylf"
 path.s3tc="res://.godot/imported/purple_planet_2.png-cc8aad7b44c1fec03d80a6377382a4b5.s3tc.ctex"
+path.etc2="res://.godot/imported/purple_planet_2.png-cc8aad7b44c1fec03d80a6377382a4b5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/planet/purple_planet_2.png"
-dest_files=["res://.godot/imported/purple_planet_2.png-cc8aad7b44c1fec03d80a6377382a4b5.s3tc.ctex"]
+dest_files=["res://.godot/imported/purple_planet_2.png-cc8aad7b44c1fec03d80a6377382a4b5.s3tc.ctex", "res://.godot/imported/purple_planet_2.png-cc8aad7b44c1fec03d80a6377382a4b5.etc2.ctex"]
 
 [params]
 

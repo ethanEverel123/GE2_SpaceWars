@@ -14,7 +14,7 @@ var pitch := 0.0
 
 var fire_timer := 0.0
 
-func ready():
+func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
@@ -35,6 +35,8 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if event.keycode == KEY_SPACE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _try_shoot():
 	if fire_timer <= 0.0:

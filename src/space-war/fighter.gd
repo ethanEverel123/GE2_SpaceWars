@@ -60,7 +60,7 @@ func _update_state():
 		state = State.PATROL
 	elif health < 30: #update to if being fired at
 		state = State.EVADE
-	elif global_position.distance_to(target.global_position) < 30:
+	elif global_position.distance_to(target.global_position) < 20:
 		state = State.ATTACK
 	else:
 		state = State.PURSUE

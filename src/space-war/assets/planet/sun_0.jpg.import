@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cydg7b48mnxw"
 path.s3tc="res://.godot/imported/sun_0.jpg-b2ffa2726d8fca58e4e4a5f87fdfe76f.s3tc.ctex"
+path.etc2="res://.godot/imported/sun_0.jpg-b2ffa2726d8fca58e4e4a5f87fdfe76f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/planet/sun_0.jpg"
-dest_files=["res://.godot/imported/sun_0.jpg-b2ffa2726d8fca58e4e4a5f87fdfe76f.s3tc.ctex"]
+dest_files=["res://.godot/imported/sun_0.jpg-b2ffa2726d8fca58e4e4a5f87fdfe76f.s3tc.ctex", "res://.godot/imported/sun_0.jpg-b2ffa2726d8fca58e4e4a5f87fdfe76f.etc2.ctex"]
 
 [params]
 

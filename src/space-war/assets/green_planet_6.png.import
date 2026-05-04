@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://be31u3lru1y6w"
 path.s3tc="res://.godot/imported/green_planet_6.png-8b83191264f6def4ee7b9ac686b5e555.s3tc.ctex"
+path.etc2="res://.godot/imported/green_planet_6.png-8b83191264f6def4ee7b9ac686b5e555.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/green_planet_6.png"
-dest_files=["res://.godot/imported/green_planet_6.png-8b83191264f6def4ee7b9ac686b5e555.s3tc.ctex"]
+dest_files=["res://.godot/imported/green_planet_6.png-8b83191264f6def4ee7b9ac686b5e555.s3tc.ctex", "res://.godot/imported/green_planet_6.png-8b83191264f6def4ee7b9ac686b5e555.etc2.ctex"]
 
 [params]
 

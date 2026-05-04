@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnirvnu41u1sy"
 path.s3tc="res://.godot/imported/BFG_2.png-9c208bd6d7dc8d2a76636862b76bc021.s3tc.ctex"
+path.etc2="res://.godot/imported/BFG_2.png-9c208bd6d7dc8d2a76636862b76bc021.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/gun/BFG_2.png"
-dest_files=["res://.godot/imported/BFG_2.png-9c208bd6d7dc8d2a76636862b76bc021.s3tc.ctex"]
+dest_files=["res://.godot/imported/BFG_2.png-9c208bd6d7dc8d2a76636862b76bc021.s3tc.ctex", "res://.godot/imported/BFG_2.png-9c208bd6d7dc8d2a76636862b76bc021.etc2.ctex"]
 
 [params]
 
